@@ -1,4 +1,50 @@
 Wishez::Application.routes.draw do
+  get "benefactors/new"
+
+  get "benefactors/edit"
+
+  get "benefactors/show"
+
+  get "benefactors/index"
+
+  get "items/new"
+
+  get "items/edit"
+
+  get "items/show"
+
+  get "items/index"
+
+  get "lists/new"
+
+  get "lists/edit"
+
+  get "lists/show"
+
+  get "lists/index"
+
+  get "kids/new"
+
+  get "kids/edit"
+
+  get "kids/show"
+
+  get "kids/index"
+
+  get "parents/new"
+
+  get "parents/edit"
+
+  get "parents/show"
+
+  get "parents/index"
+
+  get "pages/home"
+
+  get "pages/about"
+
+  get "pages/contact"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
