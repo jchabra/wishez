@@ -1,6 +1,4 @@
 class ParentsController < ApplicationController
-  
-
   def new
     @parent = Parent.new
   end
@@ -8,17 +6,17 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.create(params[:parent])
     if @parent.save
-      redirect_to new_kid_path
+      redirect_to @parent
     else
       render :new
     end
-
   end
 
   def edit
   end
 
   def show
+    @parent = Parent.find(params[:id])
   end
 
   def index

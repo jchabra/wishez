@@ -1,2 +1,12 @@
-<h1>Parents#show</h1>
-<p>Find me in app/views/parents/show.html.erb</p>
+<h1>Parents Show Page</h1>
+
+<%= link_to "Create New Kid", new_kid_path(:parent_id => @parent.id) %>
+<br>
+
+<%= @parent.first_name %>
+
+<ul>
+  <% @parent.kids.each do |kid| %>
+    <li><%= link_to kid.first_name, kid %></li>
+  <% end %>
+</ul>
