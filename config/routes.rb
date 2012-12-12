@@ -1,49 +1,59 @@
 Wishez::Application.routes.draw do
-  get "benefactors/new"
+  
+  resources :benefactors
+  resources :items
+  resources :lists
+  resources :kids
+  resources :parents
 
-  get "benefactors/edit"
+  match '/about', to: 'pages#about'
+  match '/contact', to: 'pages#contact'
 
-  get "benefactors/show"
+  # get "benefactors/new"
 
-  get "benefactors/index"
+  # get "benefactors/edit"
 
-  get "items/new"
+  # get "benefactors/show"
 
-  get "items/edit"
+  # get "benefactors/index"
 
-  get "items/show"
+  # get "items/new"
 
-  get "items/index"
+  # get "items/edit"
 
-  get "lists/new"
+  # get "items/show"
 
-  get "lists/edit"
+  # get "items/index"
 
-  get "lists/show"
+  # get "lists/new"
 
-  get "lists/index"
+  # get "lists/edit"
 
-  get "kids/new"
+  # get "lists/show"
 
-  get "kids/edit"
+  # get "lists/index"
 
-  get "kids/show"
+  # get "kids/new"
 
-  get "kids/index"
+  # get "kids/edit"
 
-  get "parents/new"
+  # get "kids/show"
 
-  get "parents/edit"
+  # get "kids/index"
 
-  get "parents/show"
+  # get "parents/new"
 
-  get "parents/index"
+  # get "parents/edit"
 
-  get "pages/home"
+  # get "parents/show"
 
-  get "pages/about"
+  # get "parents/index"
 
-  get "pages/contact"
+  # get "pages/home"
+
+  # get "pages/about"
+
+  # get "pages/contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -94,7 +104,7 @@ Wishez::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'pages#home'
 
   # See how all your routes lay out with "rake routes"
 
