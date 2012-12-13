@@ -2,5 +2,6 @@
 
 <%= form_for @list do |f| %>
   <%= f.text_field :title %>
+  <%= hidden_field_tag 'kid_id', @kid.id %>
   <%= f.submit %>
 <% end %>

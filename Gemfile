@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.9'
 
+gem 'bcrypt-ruby'
 gem 'jquery-rails'
 gem 'pg'
 gem 'thin'

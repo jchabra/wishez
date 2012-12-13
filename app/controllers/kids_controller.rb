@@ -1,6 +1,6 @@
 class KidsController < ApplicationController
   def new
-    @parent = Parent.find(params[:parent_id])
+    @parent = Parent.find(params[:parent_id]) #This captures the parent's id. This way the kid is linked to the parent. 
     @kid = Kid.new
   end
 

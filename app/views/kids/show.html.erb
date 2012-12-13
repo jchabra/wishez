@@ -1,15 +1,16 @@
-<h1>Kid's Show Page</h1>
-
-<%= @kid.first_name %>'s Page
+<h1><%= @kid.first_name %>'s Page</h1>
 
 <br>
+
+<%= link_to "Create a New List - IF PARENT", new_list_path(:kid_id => @kid.id) %>
+
+<ul>
+  <% @kid.lists.each do |list| %>
+    <li><%= link_to list.title, list %></li>
+  <% end %>
+</ul>
+
 <br>
 
-<%= link_to "Create a New List - IF PARENT", new_list_path  %>
-
-<br>
-<br>
-
-<%= link_to "This specific Kid's Lists - link goes no where", '#' %>
-
+<p>ONLY HAVE THE LISTS SHOW UP IF BENEF -- NO CREATE LIST OPTION</p>
 

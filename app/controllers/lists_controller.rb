@@ -1,12 +1,16 @@
 class ListsController < ApplicationController
   def new
+    @kid = Kid.find(params[:kid_id]) #This will find the kid's ID and link it to the list => then the list will be linked to that specific kid.
     @list = List.new
   end
 
   def create
+    @kid = Kid.find(params[:kid_id])
     @list = List.create(params[:list])
+    
     if @list.save
-      redirect_to new_item_path
+      @kid.lists << @list
+      redirect_to @kid
     else
       render :new
     end

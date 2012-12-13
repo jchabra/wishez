@@ -1,6 +1,12 @@
-<h1>Show List Page</h1>
+<h1><%= @list.title %> List Page</h1>
 
-<%= @list.title %>
+<%= link_to "IF PARENT, +ADD an item", new_item_path(:list_id => @list.id) %>
+
+<ul>
+  <% @list.items.each do |item| %>
+    <li><%= link_to item.title, item %></li>
+  <% end %>
+</ul>
 
 <p>If Parent, show stats.</p>
 
