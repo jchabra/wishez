@@ -11,12 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213201227) do
+ActiveRecord::Schema.define(:version => 20121213231417) do
 
   create_table "benefactors", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "username"
     t.string   "email"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -38,10 +37,12 @@ ActiveRecord::Schema.define(:version => 20121213201227) do
     t.string   "first_name"
     t.string   "last_name"
     t.integer  "age"
-    t.string   "disease"
     t.integer  "parent_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.text     "health"
+    t.string   "photo"
+    t.string   "youtube"
   end
 
   create_table "lists", :force => true do |t|

@@ -10,7 +10,6 @@
 #
 
 class List < ActiveRecord::Base
-  attr_accessible :kid_id, :title
   belongs_to :kid
   has_many :items
 end

@@ -1,2 +1,9 @@
-<h1>Benefactors#show</h1>
-<p>Find me in app/views/benefactors/show.html.erb</p>
+<h1><%= @benef.first_name %>'s Profile Page</h1>
+
+<span>First Name: <%= @benef.first_name %></span><br>
+<span>Last Name: <%= @benef.last_name %></span><br>
+<span>Email: <%= @benef.email %></span><br>
+
+<h5>Check out the <%= link_to "Kids in Need", kids_path %></h5>
+
+<p>Show Stats</p>

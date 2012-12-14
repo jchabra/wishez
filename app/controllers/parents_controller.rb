@@ -7,7 +7,7 @@ class ParentsController < ApplicationController
     @parent = Parent.create(params[:parent])
     if @parent.save
       session[:parent_email] = @parent.email
-      session[:id] = @parent[:id]
+      session[:parent_id] = @parent.id
       redirect_to @parent
     else
       render :new

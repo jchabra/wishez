@@ -14,6 +14,9 @@ end
 group :development do 
   gem 'annotate'
   gem 'rails-footnotes'
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :assets do

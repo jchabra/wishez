@@ -1,2 +1,15 @@
-<h1>Benefactors#new</h1>
-<p>Find me in app/views/benefactors/new.html.erb</p>
+<h1>Create a New Supporter Account</h1>
+
+<%= form_for @benef do |f| %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br/>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name%><br/>
+  <%= f.label "Email" %>
+  <%= f.text_field :email %><br/>
+  <%= f.label :password%>
+  <%= f.password_field :password %><br/>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br/>
+  <%= f.submit "Submit" %>
+<% end %>

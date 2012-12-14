@@ -1,7 +1,14 @@
 <h1>Create a Profile Page for Your Kid</h1>
 
 <%= form_for @kid do |f| %>
-  <%= f.text_field :first_name %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %><br/>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name%><br/>
+  <%= f.label :age %>
+  <%= f.text_field :age%><br/>
+  <%= f.label "Description of Medical Condition" %>
+  <%= f.text_area :health%><br/>
   <%= hidden_field_tag 'parent_id', @parent.id %>
-  <%= f.submit %>
+  <%= f.submit "Submit" %>
 <% end %>

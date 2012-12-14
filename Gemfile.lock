@@ -32,6 +32,10 @@ GEM
       rake
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    better_errors (0.2.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
     builder (3.0.4)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -68,6 +72,8 @@ GEM
       slop (~> 3.3.1)
     pry-rails (0.2.2)
       pry (>= 0.9.10)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -126,10 +132,13 @@ PLATFORMS
 DEPENDENCIES
   annotate
   bcrypt-ruby
+  better_errors
+  binding_of_caller
   coffee-rails (~> 3.2.1)
   jquery-rails
   pg
   pry-rails
+  quiet_assets
   rails (= 3.2.9)
   rails-footnotes
   sass-rails (~> 3.2.3)

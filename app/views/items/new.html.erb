@@ -1,7 +1,16 @@
 <h1>New Item</h1>
 
 <%= form_for @item do |f| %>
-  <%= f.text_field :title %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br/>
+  <%= f.label :description %>
+  <%= f.text_field :description%><br/>
+  <%= f.label :image %>
+  <%= f.text_field :image%><br/>
+  <%= f.label :price  %>
+  <%= f.text_area :price %><br/>
+  <%= f.label :url  %>
+  <%= f.text_area :url %><br/>
   <%= hidden_field_tag 'list_id', @list.id %>
   <%= f.submit %>
 <% end %>
