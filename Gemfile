@@ -13,16 +13,18 @@ end
 
 group :development do 
   gem 'annotate'
-  gem 'rails-footnotes'
-  gem 'quiet_assets'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'quiet_assets'
+  gem 'rails-footnotes'
 end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'compass-rails'
+  gem 'zurb-foundation'
 end
 
 

@@ -1,5 +1,13 @@
 Wishez::Application.routes.draw do
   
+  get "purchases/index"
+
+  get "purchases/new"
+
+  get "purchases/edit"
+
+  get "purchases/show"
+
   resources :benefactors
   resources :items
   resources :lists

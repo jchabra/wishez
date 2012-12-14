@@ -3,29 +3,20 @@ class SessionController < ApplicationController
   end
 
   def create
-    type = params[:type]
-    if type == 'parent'
-      parent = Parent.find_by_email(params[:email]) 
-      if parent && parent.authenticate(params[:password]) 
-        session[:parent_id] = parent.id 
-        redirect_to parent
-      else 
-        render :new 
-      end
-    else
-      benef = Benefactor.find_by_email(params[:email]) 
-      if benef && benef.authenticate(params[:password])
-        session[:benef_id] = benef.id
-        redirect_to benef
-      else
-        render :new
-      end
+    user = Parent.find_by_email(params[:email])
+    user = Benefactor.find_by_email(params[:email]) if user.nil?
+
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id 
+      session[:user_type] = user.class
+      redirect_to user
+    else 
+      render :new 
     end
   end
   
   def destroy
-    session[:parent_id] = nil
-    session[:benef_id] = nil
+    session[:user_id] = nil
     redirect_to root_path
   end
 end

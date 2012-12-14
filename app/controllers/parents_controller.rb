@@ -18,7 +18,6 @@ class ParentsController < ApplicationController
   end
 
   def show
-    @parent = Parent.find(params[:id])
   end
 
   def index
