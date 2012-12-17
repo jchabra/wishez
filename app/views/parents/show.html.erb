@@ -1,10 +1,10 @@
 <h1><%= @auth_user.first_name %>'s Profile Page</h1>
 
-<%= link_to "Create New Kid", new_kid_path(:parent_id => @auth_user.id) %>
-<br>
+<h3>
+<%= link_to "Create New Kid", new_kid_path(:parent_id => @auth_user.id) %></h3>
 
 <ul>
   <% @auth_user.kids.each do |kid| %>
-    <li><%= link_to kid.first_name, kid %></li> <!-- The only reason why we can refer to "kid.first_name" here is because of the associations in the models. If the associations did not exist, then you cannot refer to the "kid." -->
+    <li class="list"><%= link_to kid.first_name, kid %></li> 
   <% end %>
-</ul>
+</ul><!--.kids_list-->

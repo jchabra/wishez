@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
   def new
-    @list = List.find(params[:list_id]) #This will find the kid's ID and link it to the list => then the list will be linked to that specific kid.
+    @list = List.find(params[:list_id]) 
     @item = Item.new
   end
 
@@ -23,7 +23,12 @@ class ItemsController < ApplicationController
   end
 
   def show
-    item_id = params[:id]
     @item = Item.find(params[:id])
+    @item_added = @item.created_at
+  end
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
   end
 end

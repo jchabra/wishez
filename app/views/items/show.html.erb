@@ -1,13 +1,22 @@
-<h1><%= @item.title %>'s Show Page</h1>
+<h1><%= @item.title.titleize %></h1>
+<p>Item Added: <%= time_ago_in_words(@item_added).titleize %> Ago</p>
 
-<p>Show the details of the item.</p>
+<div class= "six columns">
+  <p><%= image_tag @item.image %></p>
+</div>
+<div class="six columns">
+  <h5>Description: <%= @item.description %></h5>
+  <h5>Price: <%= number_to_currency(@item.price) %></h5>
+  <h5>Check it out: <%= @item.url %></h5>
+</div>
 
-<p>Image and URL</p>
-
-<span>Price</span>
-
+<p>If Parent, show EDIT button.</p>
 <p>If BENEF, show BUY button below.</p>
-<%= submit_tag 'Buy' %>
-<p>redirect_to Purchases PAGE</p>
 
-<%= link_to 'Back', "#" %>
+
+<%= form_tag('/new_purchase') do %>
+  <%= hidden_field_tag 'item_id', @item.id %>
+  <%= submit_tag 'Buy this item' %>
+<% end %>
+
+

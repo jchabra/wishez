@@ -1,6 +1,7 @@
 <h1>Create a New List</h1>
 
 <%= form_for @list do |f| %>
+  <%= f.label "List Name" %>
   <%= f.text_field :title %>
   <%= hidden_field_tag 'kid_id', @kid.id %>
   <%= f.submit %>

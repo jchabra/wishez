@@ -1,16 +1,33 @@
 <h1>New Item</h1>
 
-<%= form_for @item do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br/>
-  <%= f.label :description %>
-  <%= f.text_field :description%><br/>
-  <%= f.label :image %>
-  <%= f.text_field :image%><br/>
-  <%= f.label :price  %>
-  <%= f.text_area :price %><br/>
-  <%= f.label :url  %>
-  <%= f.text_area :url %><br/>
-  <%= hidden_field_tag 'list_id', @list.id %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <%= form_for @item, :html => {:multipart => true} do |f| %>
+    <div class="four columns">
+      <%= f.label "Name of Item" %>
+      <%= f.text_field :title, :placeholder => "example: Book" %>
+    </div>
+    <div class="four columns">
+      <%= f.label "Link to Purchase Item" %>
+      <%= f.text_field :url, :placeholder => "http://www.amazon.com" %>
+    </div>
+    <div class="four columns">
+      <%= f.label :price  %>
+      <%= f.number_field :price, :placeholder => "example: $10.00" %>
+    </div>
+    <div class="four columns">
+      <%= f.label "Image of Item" %>
+      <%= f.text_field :remote_image_url, :placeholder => "Insert URL" %>
+      <%= image_tag(@item.image_url) if @item.image? %>
+      <%= f.file_field :image %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <div class="six columns">
+      <%= f.label :description %>
+      <%= f.text_area :description, :placeholder => "example: Children's Book about Turtles"%>
+    </div>
+      <%= hidden_field_tag 'list_id', @list.id %>
+    <div class="two columns">
+      <%= f.submit :class => "medium radius button enter"%>
+    </div>
+  <% end %>
+</div><!--.row-->

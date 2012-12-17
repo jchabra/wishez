@@ -3,8 +3,12 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.9'
 
 gem 'bcrypt-ruby'
+gem 'carrierwave'
+gem 'fog'
 gem 'jquery-rails'
+# gem 'mini_magick'
 gem 'pg'
+gem 'rmagick'
 gem 'thin'
 
 group :development, :test do

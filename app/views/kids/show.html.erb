@@ -1,12 +1,11 @@
 <h1><%= @kid.first_name %>'s Page</h1>
 
 <br>
-
-<%= link_to "Create a New List - IF PARENT", new_list_path(:kid_id => @kid.id) %>
+<h3><%= link_to "Create a New List - IF PARENT", new_list_path(:kid_id => @kid.id) %></h3>
 
 <ul>
   <% @kid.lists.each do |list| %>
-    <li><%= link_to list.title, list %></li>
+    <li class="list"><%= link_to list.title.titleize, list %> | <%= link_to 'Delete List', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
   <% end %>
 </ul>
 

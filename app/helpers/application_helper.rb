@@ -15,4 +15,9 @@ module ApplicationHelper
       end
   end
 
+  def is_parent?
+    @auth_user.class.name == "Parent"
+  end
+
+
 end

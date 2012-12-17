@@ -1,4 +1,7 @@
 class ListsController < ApplicationController
+  def index
+  end
+  
   def new
     @kid = Kid.find(params[:kid_id]) #This will find the kid's ID and link it to the list => then the list will be linked to that specific kid.
     @list = List.new
@@ -10,7 +13,7 @@ class ListsController < ApplicationController
     
     if @list.save
       @kid.lists << @list
-      redirect_to @kid
+      redirect_to @list
     else
       render :new
     end
@@ -22,8 +25,12 @@ class ListsController < ApplicationController
   def show
     list_id = params[:id]
     @list = List.find(params[:id])
+    @list_added = @list.created_at
   end
-
-  def index
+  
+  def destroy
+    @list = List.find(params[:id])
+    @list.delete
+    redirect_to(:back)
   end
 end
