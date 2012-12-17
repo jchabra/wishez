@@ -146,5 +146,12 @@ textarea, #item_image {
   margin-top: 30px;
   height: 50px;
   font-size: 20px;
+}
+
+/* ----------------- Other ----------------*/
+
+.red {
+  background: red;
+}
 
 

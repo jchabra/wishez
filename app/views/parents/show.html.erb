@@ -1,10 +1,26 @@
-<h1><%= @auth_user.first_name %>'s Profile Page</h1>
+<div class= "row">
+  <p class="text_right">Guardian's Profile Page</p>
 
-<h3>
-<%= link_to "Add Child", new_kid_path(:parent_id => @auth_user.id) %></h3>
+  <div class="row">
+    <div class="nine columns">
+      <h2>Welcome <%= @auth_user.first_name %>!</h2>
+    </div> <!-- end of guardian's name .seven columns -->
 
-<ul>
-  <% @auth_user.kids.each do |kid| %>
-    <li class="list"><%= link_to kid.first_name, kid %></li> 
-  <% end %>
-</ul><!--.kids_list-->
+    <div class="three columns">
+      <h5 class="text_right edit"><%= link_to "Add Child", new_kid_path(:parent_id => @auth_user.id) %></h5>
+    </div> <!-- .three columns--> 
+  </div> <!-- .row -->
+
+  <h4 class="red">ADD IMAGE ABOUT HOW TO ADD KID & CREATE A WISH LIST</h4>
+
+  <div class="row">
+    <div class="twelve columns">
+      <h4>Here are the kids you have registered:</h4>
+      <ul>
+        <% @auth_user.kids.each do |kid| %>
+          <li class="list"><%= link_to kid.first_name, kid %></li> 
+        <% end %>
+      </ul><!--.kids_list-->
+    </div> <!-- end of 12 columns -->
+  </div> <!-- end of kid's list .row -->
+</div><!-- end of parent profile page .row -->
