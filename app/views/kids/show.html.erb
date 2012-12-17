@@ -1,15 +1,65 @@
-<h1><%= @kid.first_name %>'s Page</h1>
+<div id="top">This is the top of the page</div>
 
-<br>
-<h3><%= link_to "Create a New List - IF PARENT", new_list_path(:kid_id => @kid.id) %></h3>
+<div class="row">
+  <div class="ten columns">
+    <h1><%= @kid.first_name %> <%= @kid.last_name %> </h1>
+  </div> <!-- .nine columns -->
+  <div class="two columns">
+    <% if is_parent? %>
+      <h5 class="text_right edit"><%= link_to "Edit Page", edit_kid_path %></h5>
+    <% else %>
+    <% end %>
+  </div>
 
-<ul>
-  <% @kid.lists.each do |list| %>
-    <li class="list"><%= link_to list.title.titleize, list %> | <%= link_to 'Delete List', list, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  <% end %>
-</ul>
+</div> <!-- .row -->
 
-<br>
+<div class="row bottom_border">
+    <div class="seven columns">
+      <p><%= image_tag @kid.photo %></p>
+    </div> <!-- .six columns -->
+    <div class="five columns">
+        <h4 class="about_kid">About <%= @kid.first_name %></h4>
+        <div class="row">
+          <div class="three columns">
+            <h5 class="about_kid">Age: <%= @kid.age %></h5>
+          </div>
+            <h5 class="about_kid">Illness: <%= @kid.illness %></h5>
+        </div>
+      <h5><%= @kid.child_descript %>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus semper dignissim interdum. Praesent convallis, dui at volutpat viverra, sapien odio pellentesque sapien, nec tempus sapien lacus quis purus. Maecenas vitae quam nunc, at congue tortor. Aliquam sit amet dignissim lacus. Morbi sit amet nibh diam, ac consequat lorem. Praesent pulvinar urna et felis venenatis iaculis. Donec vitae vulputate est.</h5>
+      <h5>Check out <%= @kid.first_name %>'s <a href="#wish_list">Wish Lists</a>.</h5>
+    </div> <!-- .five columns -->
+</div> <!-- .row .bottom_border -->
 
-<p>ONLY HAVE THE LISTS SHOW UP IF BENEF -- NO CREATE LIST OPTION</p>
+<div class="row">
+  <div class="nine columns">
+    <h3 id="wish_list"><%=@kid.first_name.titleize %>'s Wish Lists</h3>
+  </div> <!-- .eight columns -->
+  <div class= "three columns">
+    <% if is_parent? %>
+      <h3 class="text_right"><%= link_to "Create a New List", new_list_path(:kid_id => @kid.id) %></h3>
+    <% else %>
+    <% end %>
+  </div><!-- .three columns -->
+</div> <!-- end of .row for wish list heading -->
+
+  <div class="row">
+    <div class="twelve columns">
+      <h4>
+        <ul>
+        <% @kid.lists.each do |list| %>
+          <li class="list bottom_border"><%= link_to list.title.titleize, list %></li>
+        <% end %>
+      </ul>
+      </h4>
+      <h5 class="text_right">Back to the <a href="#top">top</a>.</h5>
+    </div> <!-- end of 12 col for lists -->
+  </div> <!-- end or row for lists -->
+
+
+  
+
+  
+
+
+
 

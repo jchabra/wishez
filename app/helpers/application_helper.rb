@@ -19,5 +19,9 @@ module ApplicationHelper
     @auth_user.class.name == "Parent"
   end
 
+  def is_benefactor?
+    @auth_user.class.name == "Benefactor"
+  end
+
 
 end

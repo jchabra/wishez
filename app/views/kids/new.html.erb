@@ -1,14 +1,37 @@
 <h1>Create a Profile Page for Your Kid</h1>
 
-<%= form_for @kid do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br/>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name%><br/>
-  <%= f.label :age %>
-  <%= f.text_field :age%><br/>
-  <%= f.label "Description of Medical Condition" %>
-  <%= f.text_area :health%><br/>
-  <%= hidden_field_tag 'parent_id', @parent.id %>
-  <%= f.submit "Submit" %>
-<% end %>
+<div class="row">
+  <%= form_for @kid do |f| %>
+    <div class="six columns">
+    <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="six columns">
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </div>
+    <div class="four columns">
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+    </div>
+    <div class="eight columns">
+      <%= f.label :illness %>
+      <%= f.text_field :illness %>
+    </div>
+    <div class="four columns">
+      <%= f.label "Photo of your Kid" %>
+      <%= f.text_field :remote_photo_url, :placeholder => "Insert URL" %>
+      <%= image_tag(@kid.photo_url) if @kid.photo? %>
+      <%= f.file_field :photo %>
+      <%= f.hidden_field :photo_cache %>
+    </div>
+    <div class="six columns">
+      <%= f.label "About Your Kid" %>
+      <%= f.text_area :child_descript, :placeholder => "3-5 sentences about your kid." %><br/>
+    </div>
+      <%= hidden_field_tag 'parent_id', @parent.id %>
+    <div class="one column">
+      <%= f.submit "Submit", :class => "medium radius button enter" %>
+    </div>
+  <% end %>
+</div> <!-- end of .row -->

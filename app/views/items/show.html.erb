@@ -7,16 +7,21 @@
 <div class="six columns">
   <h5>Description: <%= @item.description %></h5>
   <h5>Price: <%= number_to_currency(@item.price) %></h5>
-  <h5>Check it out: <%= @item.url %></h5>
+ <% if is_benefactor? %>
+    <%= form_tag('/new_purchase') do %>
+      <%= hidden_field_tag 'item_id', @item.id %>
+      <div class="clear"></div>
+      <%= submit_tag 'Buy this item' %>
+    <% end %>
+  <% elsif is_parent? %>
+  <% else %>
+    <h6><%= link_to "Sign in", '/login' %> to buy this Item</h6>
+  <% end %>
 </div>
 
+
+
+<!-- 
 <p>If Parent, show EDIT button.</p>
-<p>If BENEF, show BUY button below.</p>
-
-
-<%= form_tag('/new_purchase') do %>
-  <%= hidden_field_tag 'item_id', @item.id %>
-  <%= submit_tag 'Buy this item' %>
-<% end %>
-
+ -->
 

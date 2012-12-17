@@ -3,20 +3,19 @@
 
 <h3></h3>
 <% if is_parent? %>
-<h1> <%= link_to "+ADD an item", new_item_path(:list_id => @list.id) %> </h1>
+<h2> <%= link_to "+ADD an item", new_item_path(:list_id => @list.id) %> </h2>
 <% else %>
-<h1> Not a parent </h1>
 <% end %>
 
-<ul>
+<h4><ul>
   <% @list.items.each do |item| %>
     <li class="list"><%= link_to item.title.titleize, item %></li>
   <% end %>
-</ul>
-
+</ul></h4>
+<!-- 
 <p>If Parent, show stats.</p>
 
 <p>If Benef, show buy links.</p>
-
+ -->
 
 

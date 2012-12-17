@@ -36,7 +36,7 @@
           <section>
             <ul id="nav_login" class="right">
               <li id="about"><%= link_to "About", "/about" %></li>
-              <li class="contact"><%= link_to "Contact", "/about" %></li>
+              <li class="contact"><%= link_to "Contact", "/contact" %></li>
               <li class="user"><%= user_nav_link %>  </li>
               <li class="login"><%= login_and_logout %></li>
             </ul><!-- end of #nav_login .right -->
@@ -44,11 +44,23 @@
         </nav><!-- end nav-->
       </div><!-- fixed contain-to-grid--> 
     </header><!--end header-->
+  </div><!--.twelve columns-->
+</div><!--.row-->
+      
+  <div class="row" id="container">
+    <div class="twelve columns">
       <div id="yield">
         <%= yield %>
       </div><!--#yield-->
-  </div><!--.twelve columns-->
-</div><!--.row-->
+      
+      <div class="clear"></div>
+     
+    <footer> Donate-A-Wish &copy; 2012 </footer>
+  </div> <!-- End container column div for responsive -->
+</div> <!-- End container row div for responsive -->
+
+
+
 
 </body>
 </html>

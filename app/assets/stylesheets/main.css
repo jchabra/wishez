@@ -2,10 +2,58 @@
 @import url(http://fonts.googleapis.com/css?family=Luckiest+Guy);
 @import url(http://fonts.googleapis.com/css?family=Rokkitt:400,700);
 
+/* --------------------- SETUP --------------------- */
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firefox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+  clear: both;
+}
+
+.alignright {
+  float: right; 
+  padding: 0 0 10px 10px; /* note the padding around a right floated image */
+}
+
+.alignleft {
+  float: left; 
+  padding: 0 10px 10px 0; /* note the padding around a left floated image */
+}
+
+.text_right {
+  text-align: right;
+}
+
+/* ----------------- Main Page Layout ----------------*/
+
 body {
   font-family: 'Rokkitt', serif;
   /*font-family: 'Average Sans', sans-serif;*/
   font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Rokkitt', serif;
+}
+
+footer {
+  margin-top: 100px;
+  text-align: right;
 }
 
 /* ----------------- Nav Bar ----------------*/
@@ -51,38 +99,27 @@ body {
   background: white;
 }
 
-/* ----------------- Home Page Layout ----------------*/
-
-#slideshow { 
-    margin: 50px auto; 
-    position: relative; 
-    width: 240px; 
-    height: 240px; 
-    padding: 10px; 
-    box-shadow: 0 0 20px rgba(0,0,0,0.4); 
-}
-
-#slideshow > div { 
-    position: absolute; 
-    top: 10px; 
-    left: 10px; 
-    right: 10px; 
-    bottom: 10px; 
-}
-
-
-/* ----------------- Page Layout ----------------*/
+/* ----------------- List Page Layout ----------------*/
 
 .list {
-  margin-left: 20px;
+  list-style: none;
   font-size: 20px;
   list-style-position: inside; 
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Rokkitt', serif;
+/* ----------------- Kid's Show Page Layout ----------------*/
+
+.about_kid {
+  margin-top: 0px;
 }
 
+.bottom_border {
+  border-bottom: 1px dotted #9f9f9f;
+}
+
+.edit {
+  padding-top: 20px;
+}
 
 /* ----------------- Form Layout ----------------*/
 #email, #password, #list_title {
@@ -90,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #yield {
-  margin-top: 100px;
+  margin-top: 20px;
 }
 
 label {
