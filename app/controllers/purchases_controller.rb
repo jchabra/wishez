@@ -26,8 +26,6 @@ class PurchasesController < ApplicationController
     end
 
     @p = Purchase.create(:item_id => params[:item_id], :benefactor_id => params[:benefactor_id])
-      
-    binding.pry
 
     redirect_to thanks_path
    end
