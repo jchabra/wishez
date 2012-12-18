@@ -14,6 +14,6 @@
 #
 
 class Item < ActiveRecord::Base
-  belongs_to :list
+  has_and_belongs_to_many :lists
   mount_uploader :image, ImageUploader
 end

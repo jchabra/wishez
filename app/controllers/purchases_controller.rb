@@ -8,11 +8,10 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    binding.pry
     #stripe code here
     amount = params[:amount].to_i * 100
-    token = params[:token]
-    @purchase_details = params[:item_id]
+    token = params[:stripeToken]
+
 
     begin
       @purchase = Stripe::Charge.create(
@@ -23,20 +22,15 @@ class PurchasesController < ApplicationController
       )
     rescue => e 
       @error = e.message
+      render :new
     end
 
-    #if stripe works
-      @purchase = Purchase.create(params[:purchase])
+    @p = Purchase.create(:item_id => params[:item_id], :benefactor_id => params[:benefactor_id])
       
-      if @purchase.save
-        redirect_to thanks_path
-      else
-        render :new
-      end
-    #else
-      #try again
-    #end
-  end
+    binding.pry
+
+    redirect_to thanks_path
+   end
 
   def thanks
   end

@@ -7,6 +7,8 @@ Wishez::Application.routes.draw do
   resources :parents
   resources :purchases
 
+  match '/purchases/new', to: 'purchases#new', :via => :post
+
   match '/about', to: 'pages#about'
   match '/contact', to: 'pages#contact'
   match '/thanks', to: 'purchases#thanks'

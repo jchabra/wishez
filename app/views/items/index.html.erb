@@ -4,8 +4,9 @@
   <thead> 
     <tr> 
         <th>Image</th> 
-        <th>Price</th> 
-        <th>Item Details</th> 
+        <th>Price   <%= image_tag 'arrow_icon.png', :class =>"arrow" %></th> 
+        <th>Item Details   <%= image_tag 'arrow_icon.png', :class =>"arrow" %></th> 
+        <th></th>
     </tr> 
   </thead> 
   <tbody>
@@ -14,6 +15,17 @@
         <td class="table_font"><%= image_tag item.image.medium, :class => "item_image" %></td>
         <td class="table_font"><%= number_to_currency(item.price) %></td>
         <td class="table_font"><%= link_to item.title.titleize, item %></td>
+        <td class="table_font">
+          <% if is_benefactor? %>
+          <%= form_tag '/purchases/new' do %>
+            <%= hidden_field_tag 'item_id', item.id %>
+            <%= submit_tag 'Buy this item' %>
+          <% end %>
+        <% elsif is_parent? %>
+        <% else %>
+          <h6><%= link_to "Sign in", '/login' %> to buy this Item</h6>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

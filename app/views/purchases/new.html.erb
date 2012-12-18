@@ -1,16 +1,27 @@
 <h1>New Purchase</h1>
 
- <%= image_tag @item.image.medium, :class => "item_image" %>
-  <%= number_to_currency(@item.price) %>
-  <%= link_to @item.title.titleize, @item %>
+<table class="twelve columns">
+  <tr>
+    <td class="table_font">
+      <%= image_tag @item.image.medium, :class => "item_image" %>
+    </td>
+    <td class="table_font">
+      <%= number_to_currency(@item.price) %></td>
+    <td class="table_font">
+      <%= link_to @item.title.titleize, @item %>
+    </td>
+  </tr>
+</table>
+<div class="clear"></div>
 
-<div id="transaction">
-<script src="https://button.stripe.com/v1/button.js" class="stripe-button" data-key="<%= STRIPE_PUB %>"></script>
+<div class="ten columns"></div>
+<div class="two columns stripe">
+  <%= form_tag '/purchases', :id => 'stripeform' do %>
+    <script src="https://button.stripe.com/v1/button.js" class="stripe-button" data-key="<%= STRIPE_PUB %>"></script>
+
+    <%= hidden_field_tag :item_id, params[:item_id] %>
+    <%= hidden_field_tag :amount, @item.price %>
+    <%= hidden_field_tag :benefactor_id, @auth_user.id %>
+    <%= hidden_field_tag 'token' %>
+  <% end %>
 </div>
-
-<%= form_tag '/purchases/create', :id => 'stripeform', :remote => true do  %>
-  <%= hidden_field_tag :item_id, value: params[:item_id] %>
-  <%= hidden_field_tag :amount, value: @item.price %>
-  <%= hidden_field_tag :benefactor_id, value: @auth_user.id %>
-  <%= hidden_field_tag 'token' %>
-<% end %>
