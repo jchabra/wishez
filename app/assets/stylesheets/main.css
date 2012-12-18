@@ -154,6 +154,7 @@ footer {
 
 .home_page {
   width: 175px;
+  margin-left: 10px;
 }
 
 #slogan {
@@ -163,9 +164,21 @@ footer {
   margin-top: 0px !important;
 }
 
-
 .home_pg_img {
   margin-bottom: 0;
+}
+
+.about_margin {
+  padding-top: 25px; 
+}
+
+.text {
+  color: black;
+  text-align: right;
+}
+
+.button_center {
+  margin-left: 260px;
 }
 
 /* ----------------- List Page Layout ----------------*/

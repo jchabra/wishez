@@ -1,3 +1,4 @@
+<h3 id="slogan">Welcome to Donate A Wish... Where you can change the world!</h3>
   <div class="row">
     <div class="twelve columns home_pg_img">
       <div id="featured">
@@ -9,12 +10,15 @@
     </div><!-- 12 columns -->
   </div><!-- END PHOTOS .row -->
 
-<h3 id="slogan">Welcome to Donate A Wish... Where you can change the world!</h3>
+<h2>How does it work?</h2>
 
-<div class="six columns">
-  <%= link_to "I'm a guardian.", new_parent_path, :class => "home_page button" %>
-</div>
+<h3 class="center">Guardians <%= image_tag 'parents.png' %> create wish lists <%= image_tag 'wishlist.png' %> for children <%= image_tag 'children.png' %> with terminal illnesses.</h3>
 
-<div class="six columns">
-  <%= link_to "I want to help.", benefactors_path, :class => "home_page button" %>
+<h3 class="center">You <%= image_tag 'you.png' %> can purchase an item <%= image_tag 'bear.png' %> from one of their lists.</h3>
+
+<div class="row about_margin">
+  <div class="twelve columns button_center">
+    <%= link_to "I'm a guardian.", new_parent_path, :class => "home_page button" %>
+    <%= link_to "I want to help.", benefactors_path, :class => "home_page button" %>
+  </div>
 </div>

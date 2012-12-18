@@ -1,1 +1,12 @@
-<h3>Coming Soon...</h3>
+<h2>How does it work?</h2>
+
+<h3 class="center">Guardians <%= image_tag 'parents.png' %> create wish lists <%= image_tag 'wishlist.png' %> for children <%= image_tag 'children.png' %> with terminal illnesses.</h3>
+
+<h3 class="center">You <%= image_tag 'you.png' %> can purchase an item <%= image_tag 'bear.png' %> from one of their lists.</h3>
+
+<div class="row about_margin">
+  <div class="twelve columns button_center">
+    <%= link_to "I'm a guardian.", new_parent_path, :class => "home_page button" %>
+    <%= link_to "I want to help.", benefactors_path, :class => "home_page button" %>
+  </div>
+</div>
