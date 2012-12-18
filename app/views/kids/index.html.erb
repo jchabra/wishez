@@ -2,7 +2,7 @@
 <h3>Check out the happy faces below to see what you can do today.</h3>
 
 <% @kids.each do |kid| %>
-  <div class="four columns">
+  <div class="three columns kid_index">
     <%= image_tag kid.photo.large, :class => "kid_photo" %>
     <h4><%= link_to kid.first_name, kid %></h4>
     <h6><%= kid.illness %></h6>

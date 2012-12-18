@@ -220,6 +220,10 @@ table thead tr th {
   border-radius: 3px;
 }
 
+.kid_index:last-child {
+  float: left !important;
+}
+
 /* ----------------- Form Layout ----------------*/
 #list_title {
   width: 300px;
