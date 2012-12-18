@@ -1,9 +1,16 @@
 <h1>New Purchase</h1>
 
-Stripe?
+ <%= image_tag @item.image.medium, :class => "item_image" %>
+  <%= number_to_currency(@item.price) %>
+  <%= link_to @item.title.titleize, @item %>
 
-<%= form_for @purchase do |f| %>
-  <%= f.hidden_field :item_id, value: params[:item_id] %>
-  <%= f.hidden_field :benefactor_id, value: @auth_user.id %>
-  <%= f.submit %>
+<div id="transaction">
+<script src="https://button.stripe.com/v1/button.js" class="stripe-button" data-key="<%= STRIPE_PUB %>"></script>
+</div>
+
+<%= form_tag '/purchases/create', :id => 'stripeform', :remote => true do  %>
+  <%= hidden_field_tag :item_id, value: params[:item_id] %>
+  <%= hidden_field_tag :amount, value: @item.price %>
+  <%= hidden_field_tag :benefactor_id, value: @auth_user.id %>
+  <%= hidden_field_tag 'token' %>
 <% end %>

@@ -1,10 +1,11 @@
-<h1>All Kids</h1>
+<h1>Interested in Donating A Wish?</h1>
+<h3>Check out the happy faces below to see what you can do today.</h3>
 
-<h4><% @kids.each do |kid| %>
-  <%= kid.first_name %>
-  |
-  <%#= kid.last_name %>
-  <%= link_to 'Show', kid %>
-  <br>
-<% end %></h4>
+<% @kids.each do |kid| %>
+  <div class="four columns">
+    <%= image_tag kid.photo.large, :class => "kid_photo" %>
+    <h4><%= link_to kid.first_name, kid %></h4>
+    <h6><%= kid.illness %></h6>
+  </div><!-- four columns-->
+<% end %>
 

@@ -1,9 +1,20 @@
 <h1>All Items</h1>
 
-<table>
-  <% @items.each do |item| %>
-    <tr>
-      <td><%= link_to item.title, item %></td>
-    </tr>
-  <% end %>
+<table id="item_table" class="twelve columns"> 
+  <thead> 
+    <tr> 
+        <th>Image</th> 
+        <th>Price</th> 
+        <th>Item Details</th> 
+    </tr> 
+  </thead> 
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td class="table_font"><%= image_tag item.image.medium, :class => "item_image" %></td>
+        <td class="table_font"><%= number_to_currency(item.price) %></td>
+        <td class="table_font"><%= link_to item.title.titleize, item %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>

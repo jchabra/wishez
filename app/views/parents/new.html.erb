@@ -1,16 +1,29 @@
-<h1>Sign up your kid in need</h1>
-<h2>Create an account</h2>
+<h1>Set-up an account</h1>
 
-<%= form_for @parent do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %><br/>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name%><br/>
-  <%= f.label "Email" %>
-  <%= f.email_field :email %><br/>
-  <%= f.label :password%>
-  <%= f.password_field :password %><br/>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br/>
-  <%= f.submit "Submit" %> 
-<% end %>
+<div class="row">
+  <%= form_for @parent do |f| %>
+  <div class="six columns">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div><!-- .six columns -->
+  <div class="six columns">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name%>
+  </div><!-- .six columns --> 
+  <div class="four columns">
+    <%= f.label "Email" %>
+    <%= f.email_field :email %>
+  </div><!-- four columns -->
+  <div class="four columns">
+    <%= f.label :password%>
+    <%= f.password_field :password %>
+  </div><!-- four columns -->
+  <div class="four columns">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div><!-- four columns -->
+  <div class= "two columns">
+    <%= f.submit "Submit", :class => "medium button parent_account" %> 
+  </div><!-- two columns -->
+  <% end %>
+</div><!-- end of .row -->

@@ -7,8 +7,6 @@ Wishez::Application.routes.draw do
   resources :parents
   resources :purchases
 
-  post '/new_purchase', to: 'purchases#new'
-
   match '/about', to: 'pages#about'
   match '/contact', to: 'pages#contact'
   match '/thanks', to: 'purchases#thanks'
@@ -16,6 +14,9 @@ Wishez::Application.routes.draw do
   match '/login'=> 'session#new', :via => :get
   match '/login'=> 'session#create', :via => :post
   match '/logout'=> 'session#destroy', :via => :get
+
+  # get '/stripe' => 'stripe#new'
+  # post '/stripe' => 'stripe#create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

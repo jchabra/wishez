@@ -51,6 +51,10 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Rokkitt', serif;
 }
 
+h1, h2 {
+  color: #07566b;
+}
+
 footer {
   margin-top: 100px;
   text-align: right;
@@ -61,27 +65,40 @@ footer {
   background: white;
   color: black;
   font-family: 'Rokkitt', serif;
-  height: 100px;
-
+  height: 80px;
 }
 
 .top-bar > ul .name h1 a {
   font-family: 'Rokkitt', serif;
-  /*font-family: 'Englebert', sans-serif;*/
-  /*font-family: 'Luckiest Guy', cursive;*/
   font-size: 44px !important;
   }
 
 .top-bar ul > li a:not(.button) {
-  color: black;
-  padding: 10px 10px 0 10px;
+  color: #06303b;
+  padding: 12px 10px 0 13px;
   font-size: 20px;
-  height: 80px;
 }
 
-  #about .top-bar ul > li a:not(.button) {
+  #home a:hover {
     color: #d76c90;
   }
+
+   #about a:hover {
+    color: #ef883b;
+  }
+
+   #contact a:hover {
+    color: #e9d236;
+  }
+
+   #person a:hover {
+    color: #72a9bc;
+  }
+
+  #login a:hover {
+      color: #c069b1;
+    }
+
 
 .toggle-topbar{
   background: white;
@@ -99,12 +116,89 @@ footer {
   background: white;
 }
 
+/* ----------------- Home Page ----------------*/
+
+.button {
+   border-top: 1px solid #9ed3d9;
+   background: #2d5559;
+   background: -webkit-gradient(linear, left top, left bottom, from(#489fa9), to(#2d5559));
+   background: -webkit-linear-gradient(top, #489fa9, #2d5559);
+   background: -moz-linear-gradient(top, #489fa9, #2d5559);
+   background: -ms-linear-gradient(top, #489fa9, #2d5559);
+   background: -o-linear-gradient(top, #489fa9, #2d5559);
+   padding: 11px 17px;
+   -webkit-border-radius: 7px;
+   -moz-border-radius: 7px;
+   border-radius: 7px;
+   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+   box-shadow: rgba(0,0,0,1) 0 1px 0;
+   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+   color: white;
+   font-size: 18px !important;
+   font-family: 'Rokkitt', serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-left: 0px;
+   letter-spacing: .75px;
+   }
+.button:hover {
+   border-top-color: #10656e;
+   background: #10656e;
+   color: #ccc;
+   }
+.button:active {
+   border-top-color: #10b5c7;
+   background: #10b5c7;
+   }
+
+.home_page {
+  width: 175px;
+}
+
+#slogan {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px !important;
+}
+
+
+.home_pg_img {
+  margin-bottom: 0;
+}
+
 /* ----------------- List Page Layout ----------------*/
 
 .list {
   list-style: none;
   font-size: 20px;
   list-style-position: inside; 
+}
+
+.item_image {
+  margin-right: 30px;
+}
+
+.table_font, .table_font_small {
+  font-size: 23px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.table_font_small {
+  font-size: 14px;
+}
+
+table thead tr th {
+  font-size: 18px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
 }
 
 /* ----------------- Kid's Show Page Layout ----------------*/
@@ -121,8 +215,13 @@ footer {
   padding-top: 20px;
 }
 
+.kid_photo {
+  border: 2px solid gray;
+  border-radius: 3px;
+}
+
 /* ----------------- Form Layout ----------------*/
-#email, #password, #list_title {
+#list_title {
   width: 300px;
 }
 
@@ -135,7 +234,7 @@ label {
 }
 
 input[type="submit"] {
-  float: left;
+  float: center;
 }
 
 textarea, #item_image {
@@ -148,10 +247,19 @@ textarea, #item_image {
   font-size: 20px;
 }
 
+.parent_account {
+  margin-left: 35px;
+}
+
+.login_page {
+  margin-top: 20px;
+}
+
 /* ----------------- Other ----------------*/
 
-.red {
-  background: red;
+.buy {
+  padding: 7px 10px;
+  font-size: 13px !important;
 }
 
 

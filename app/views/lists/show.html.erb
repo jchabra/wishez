@@ -1,21 +1,47 @@
-<h1><%= @list.title.titleize %> List Page</h1>
-<p>List Created: <%= time_ago_in_words(@list_added).titleize %> Ago</p>
+<div class="row">
+  <div class="ten columns">
+    <h1><%= @list.title.titleize %> List Page</h1>
+    <p>List Created: <%= time_ago_in_words(@list_added).titleize %> Ago</p>
+  </div> <!-- .ten columns -->
+  <div class="two columns">
+    <% if is_parent? %>
+      <h5 class= "text_right edit"><%= link_to "+ADD an item", new_item_path(:list_id => @list.id) %></h5>
+    <% else %>
+    <% end %>
+  </div> <!-- .two columns -->
+</div> <!--end of top .row-->
 
-<h3></h3>
-<% if is_parent? %>
-<h2> <%= link_to "+ADD an item", new_item_path(:list_id => @list.id) %> </h2>
-<% else %>
-<% end %>
+<table class="twelve columns">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Price</th> 
+      <th>Item Details</th> 
+      <th></th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% @list.items.each do |item| %>
+      <tr>
+        <td class="table_font"><%= image_tag item.image.medium, :class => "item_image" %></td>
+        <td class="table_font"><%= number_to_currency(item.price) %></td>
+        <td class="table_font"><%= link_to item.title.titleize, item %></td>
+        <td class="table_font">
+          <% if is_benefactor? %>
+            <%= form_tag('/purchases/new') do %>
+              <%= hidden_field_tag 'item_id', item.id %>
+              <%= submit_tag 'Buy this item' %>
+            <% end %>
+          <% elsif is_parent? %>
+          <% else %>
+            <%= link_to "Sign in", '/login' %> to buy this Item.
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<h4><ul>
-  <% @list.items.each do |item| %>
-    <li class="list"><%= link_to item.title.titleize, item %></li>
-  <% end %>
-</ul></h4>
-<!-- 
-<p>If Parent, show stats.</p>
 
-<p>If Benef, show buy links.</p>
- -->
 
 

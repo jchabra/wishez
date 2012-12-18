@@ -29,16 +29,17 @@
   <div class="twelve columns">
     <header>
       <div class="fixed contain-to-grid">
-        <nav class= "top-bar">
+        <nav class= "top-bar bottom_border">
           <ul>
             <li class="name"><h1><a href="/"><%= image_tag 'donate-a-wish_logo.png' %></a></h1></li>
           </ul>
           <section>
             <ul id="nav_login" class="right">
+              <li id="home"><%= link_to "Home", "/" %></li>
               <li id="about"><%= link_to "About", "/about" %></li>
-              <li class="contact"><%= link_to "Contact", "/contact" %></li>
-              <li class="user"><%= user_nav_link %>  </li>
-              <li class="login"><%= login_and_logout %></li>
+              <li id="contact"><%= link_to "Contact", "/contact" %></li>
+              <li id="person" class="user"><%= user_nav_link %>  </li>
+              <li id="login" class="login"><%= login_and_logout %></li>
             </ul><!-- end of #nav_login .right -->
           </section>
         </nav><!-- end nav-->

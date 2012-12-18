@@ -6,9 +6,9 @@ gem 'bcrypt-ruby'
 gem 'carrierwave'
 gem 'fog'
 gem 'jquery-rails'
-# gem 'mini_magick'
 gem 'pg'
 gem 'rmagick'
+gem 'stripe'
 gem 'thin'
 
 group :development, :test do

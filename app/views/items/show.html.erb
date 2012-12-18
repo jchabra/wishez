@@ -8,10 +8,10 @@
   <h5>Description: <%= @item.description %></h5>
   <h5>Price: <%= number_to_currency(@item.price) %></h5>
  <% if is_benefactor? %>
-    <%= form_tag('/new_purchase') do %>
-      <%= hidden_field_tag 'item_id', @item.id %>
+    <%= form_for @item do |f| %>
+      <%= f.hidden_field 'item_id', @item.id %>
       <div class="clear"></div>
-      <%= submit_tag 'Buy this item' %>
+      <%= f.submit_tag 'Buy this item', @item %>
     <% end %>
   <% elsif is_parent? %>
   <% else %>
